@@ -1963,7 +1963,7 @@ export default {
           item.name === `${pathSansExt}.vtt`
         ) {
           const url =
-            `${item.path}?player=internal` +
+            `${item.path}?player=download` +
             `&token=${this.mediaToken}&email=${this.user.email}&sessionid=${this.session.sessionid}`;
           const blob = await this.getSrtFile(url);
           if (blob.success) {
@@ -1984,7 +1984,7 @@ export default {
         } else if (regext.test(item.name)) {
           const { groups } = regext.exec(item.name);
           const url =
-            `${item.path}?player=internal` +
+            `${item.path}?player=download` +
             `&token=${this.mediaToken}&email=${this.user.email}&sessionid=${this.session.sessionid}`;
           const blob = await this.getSrtFile(url);
           if (blob.success) {
