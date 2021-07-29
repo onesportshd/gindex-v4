@@ -1964,7 +1964,7 @@ export default {
         ) {
           const url =
             `${item.path}?player=internal` +
-            `&token=${this.token.token}&email=${this.user.email}`;
+            `&token=${this.mediaToken}&email=${this.user.email}&sessionid=${this.session.sessionid}`;
           const blob = await this.getSrtFile(url);
           if (blob.success) {
             this.sub = true;
@@ -1985,7 +1985,7 @@ export default {
           const { groups } = regext.exec(item.name);
           const url =
             `${item.path}?player=internal` +
-            `&token=${this.token.token}&email=${this.user.email}`;
+            `&token=${this.mediaToken}&email=${this.user.email}&sessionid=${this.session.sessionid}`;
           const blob = await this.getSrtFile(url);
           if (blob.success) {
             this.sub = true;
@@ -2083,7 +2083,7 @@ export default {
       } else {
         const getUrl =
           `/${this.currgd.id}:/${url}?player=internal` +
-          `&token=${this.token.token}&email=${this.user.email}`;
+          `&token=${this.mediaToken}&email=${this.user.email}&sessionid=${this.session.sessionid}`;
         const blob = await this.getSrtFile(getUrl);
         if (blob.success) {
           this.suburl = this.suburl.concat([{ url: blob.blobData, label }]);
